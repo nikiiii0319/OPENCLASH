@@ -12,7 +12,7 @@ proxy-providers:
       skip-cert-verify: true
       udp: true
     proxy: 🎯 全球直连
-    url: "https://link.nobodys.uk/api/v1/client/subscribe?token=260581dfec21c3a76d1ad5475b4e1949"
+    url: "订阅链接"
       
 # 用于下载订阅时指定UA
 global-ua: clash.meta
