@@ -12,7 +12,7 @@ proxy-providers:
       skip-cert-verify: true
       udp: true
     proxy: 🎯 全球直连
-    url: "订阅链接"
+    url: "https://link.nobodys.uk/api/v1/client/subscribe?token=260581dfec21c3a76d1ad5475b4e1949"
       
 # 用于下载订阅时指定UA
 global-ua: clash.meta
@@ -31,7 +31,7 @@ tcp-concurrent: true
 geodata-mode: false
 geodata-loader: standard
 geo-auto-update: true
-geo-update-interval: 48
+geo-update-interval: 24
 geox-url:
   geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
   geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
