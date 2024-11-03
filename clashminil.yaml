@@ -2,7 +2,7 @@
 proxy-providers:
   Airport_01:
     type: http
-    interval: 86400
+    interval: 1800
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -12,8 +12,17 @@ proxy-providers:
       skip-cert-verify: true
       udp: true
     proxy: 🎯 全球直连
-    url: "订阅链接"
-      
+    url: "订阅链接1"
+  Airport_02:
+    type: http
+    interval: 1800
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      timeout: 5000
+      interval: 300
+    proxy: 🎯 全球直连
+    url: "订阅链接2"      
 # 用于下载订阅时指定UA
 global-ua: clash.meta
     
@@ -135,8 +144,7 @@ proxy-groups:
   - {name: 🎥 日本媒体, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎥 韩国媒体, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎥 AppleTV+, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎥 HBOGO, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎥 HBOMAX, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
+  - {name: 🎥 HBO, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎥 PrimeVideo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎥 EMBY, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 🎥 Dazn, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
@@ -154,6 +162,7 @@ proxy-groups:
   - {name: 💾 iCloud, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
+  - {name: 🍙 小米服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 🎮 游戏平台, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎮 游戏下载, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 📫 邮件服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
@@ -191,8 +200,7 @@ rules:
   - RULE-SET,youtube_class,📹 YouTube
   - RULE-SET,tidal_class,🎻 TIDAL
   - RULE-SET,disney_class,🎥 DisneyPlus
-  - RULE-SET,hbo_class,🎥 HBOGO
-  - RULE-SET,hboasia_class,🎥 HBOMAX
+  - RULE-SET,hbo_class,🎥 HBO
   - RULE-SET,emby_2_class,🎥 EMBY
   - RULE-SET,emby_class,🎥 EMBY
   - RULE-SET,dazn_class,🎥 Dazn
@@ -210,6 +218,7 @@ rules:
   - RULE-SET,microsoft_class,Ⓜ️ 微软服务
   - RULE-SET,apple_class,🍎 苹果服务
   - RULE-SET,appstore_class,🍎 苹果服务
+  - RULE-SET,xiaomi_class,🍙 小米服务
   - RULE-SET,globalmedia_class,🌎 国外流媒体
   - RULE-SET,google_class,🔎 Google
   - RULE-SET,yahoo_class,🔎 Yahoo
@@ -259,7 +268,6 @@ rule-providers:
   tidal_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TIDAL/TIDAL.list"}
   disney_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list"}
   hbo_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list"}
-  hboasia_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBOAsia/HBOAsia.list"}
   emby_2_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Emby_2.list"}
   emby_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Emby/Emby.list"}
   dazn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/DAZN/DAZN.list"}
@@ -277,6 +285,7 @@ rule-providers:
   microsoft_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.list"}
   apple_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.list"}
   appstore_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AppStore/AppStore.list"}
+  xiaomi_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/XiaoMi/XiaoMi.list"}
   globalmedia_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.list"}
   google_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list"}
   yahoo_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Yahoo.list"}
