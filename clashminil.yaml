@@ -233,8 +233,7 @@ rules:
   - RULE-SET,chinaip_class,🎯 全球直连
   - RULE-SET,download_class,🎯 全球直连
   - GEOSITE,category-public-tracker,🎯 全球直连
-  - GEOIP,LAN,🎯 全球直连,no-resolve
-  - GEOIP,CN,🎯 全球直连,no-resolve
+  - GEOIP,cn,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
 rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
