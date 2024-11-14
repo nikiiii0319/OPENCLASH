@@ -37,7 +37,7 @@ allow-lan: true
 unified-delay: false
 tcp-concurrent: true
   
-geodata-mode: true
+geodata-mode: false
 geodata-loader: standard
 geo-auto-update: true
 geo-update-interval: 24
@@ -233,6 +233,7 @@ rules:
   - RULE-SET,chinaip_class,🎯 全球直连
   - RULE-SET,download_class,🎯 全球直连
   - GEOSITE,category-public-tracker,🎯 全球直连
+  - GEOIP,lan,🎯 全球直连,no-resolve
   - GEOIP,cn,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
 rule-anchor:
