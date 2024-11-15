@@ -8,9 +8,6 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       timeout: 5000
       interval: 300
-    override:
-      skip-cert-verify: true
-      udp: true
     proxy: 🎯 全球直连
     url: "订阅链接1"
   Airport_02:
@@ -22,7 +19,11 @@ proxy-providers:
       timeout: 5000
       interval: 300
     proxy: 🎯 全球直连
-    url: "订阅链接2"      
+    url: "订阅链接2" 
+    override:
+      skip-cert-verify: true
+      udp: true
+     
 # 用于下载订阅时指定UA
 global-ua: clash.meta
     
