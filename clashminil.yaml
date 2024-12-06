@@ -25,7 +25,7 @@ proxy-providers:
       udp: true
      
 # 用于下载订阅时指定UA
-global-ua: clash.meta
+global-ua: clash
     
 # 全局配置
 port: 7890
@@ -41,7 +41,7 @@ tcp-concurrent: true
 geodata-mode: false
 geodata-loader: standard
 geo-auto-update: true
-geo-update-interval: 24
+geo-update-interval: 3
 geox-url:
   geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
   geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
@@ -133,7 +133,7 @@ proxy-groups:
   - {name: 🔎 Bing, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🔎 Yahoo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🗺 Speedtest, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
-  - {name: 💬 OpenAI, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
+  - {name: 💬 AI服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 Telegram, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 聊天软件, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 Instagram, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
@@ -177,7 +177,10 @@ rules:
   - RULE-SET,custom_direct_class,🎯 全球直连
   - RULE-SET,googlecn_class,🎯 全球直连
   - RULE-SET,privatetracker_class,🎯 全球直连
-  - RULE-SET,openai_class,💬 OpenAI
+  - RULE-SET,openai_class,💬 AI服务
+  - RULE-SET,copilot_class,💬 AI服务
+  - RULE-SET,ciaude_class,💬 AI服务
+  - RULE-SET,gemini_class,💬 AI服务
   - RULE-SET,onedrive_class,💾 OneDrive
   - RULE-SET,speedtest_class,🗺 Speedtest
   - RULE-SET,discord_class,📲 Discord
@@ -203,6 +206,7 @@ rules:
   - RULE-SET,tidal_class,🎻 TIDAL
   - RULE-SET,disney_class,🎥 DisneyPlus
   - RULE-SET,hbo_class,🎥 HBO
+  - RULE-SET,emby_3_class,🎥 EMBY
   - RULE-SET,emby_2_class,🎥 EMBY
   - RULE-SET,emby_class,🎥 EMBY
   - RULE-SET,dazn_class,🎥 Dazn
@@ -245,6 +249,9 @@ rule-providers:
   googlecn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list"}
   privatetracker_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PrivateTracker/PrivateTracker.list"}
   openai_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.list"}
+  copilot_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.list"}
+  ciaude_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.list"}
+  gemini_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.list"}
   onedrive_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OneDrive/OneDrive.list"}
   speedtest_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Speedtest/Speedtest.list"}
   discord_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Discord/Discord.list"}
@@ -270,6 +277,7 @@ rule-providers:
   tidal_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TIDAL/TIDAL.list"}
   disney_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list"}
   hbo_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list"}
+  emby_3_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/ddgksf2013/Filter/refs/heads/master/Emby.list"}
   emby_2_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Emby_2.list"}
   emby_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Emby/Emby.list"}
   dazn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/DAZN/DAZN.list"}
