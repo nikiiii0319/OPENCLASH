@@ -259,7 +259,7 @@ rule-providers:
   mail_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Mail/Mail.list"}
   protonmail_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Protonmail/Protonmail.list"}
   telegram_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list"}
-  liaotianapp_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/liaotianapp.list"}
+  liaotianapp_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/liaotianapp.list"}
   steamcn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.list"}
   steam_cdn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Steam_CDN.list"}
   steam_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.list"}
@@ -269,16 +269,16 @@ rule-providers:
   ubi_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/UBI/UBI.list"}
   sony_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Sony/Sony.list"}
   nintendo_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.list"}
-  kr_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/KR.list"}
+  kr_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/KR.list"}
   primevideo_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/PrimeVideo/PrimeVideo.list"}
   bahamut_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.list"}
-  jp_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/JP.list"}
+  jp_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/JP.list"}
   youtube_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list"}
   tidal_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TIDAL/TIDAL.list"}
   disney_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list"}
   hbo_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list"}
   emby_3_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/ddgksf2013/Filter/refs/heads/master/Emby.list"}
-  emby_2_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Emby_2.list"}
+  emby_2_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Emby_2.list"}
   emby_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Emby/Emby.list"}
   dazn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/DAZN/DAZN.list"}
   appletv_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AppleTV/AppleTV.list"}
@@ -298,7 +298,7 @@ rule-providers:
   xiaomi_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/XiaoMi/XiaoMi.list"}
   globalmedia_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.list"}
   google_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list"}
-  yahoo_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Yahoo.list"}
+  yahoo_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Yahoo.list"}
   global_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"}
   chinamedia_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.list"}
   chinamax_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax.list"}
