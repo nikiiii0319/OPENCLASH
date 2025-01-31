@@ -25,7 +25,7 @@ proxy-providers:
       udp: true
      
 # 用于下载订阅时指定UA
-global-ua: clash
+global-ua: clash.meta
     
 # 全局配置
 port: 7890
@@ -134,6 +134,7 @@ proxy-groups:
   - {name: 🔎 Yahoo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🗺 Speedtest, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 💬 AI服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
+  - {name: 🚀 GitHub, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 Telegram, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 聊天软件, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 Instagram, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
@@ -181,6 +182,7 @@ rules:
   - RULE-SET,copilot_class,💬 AI服务
   - RULE-SET,ciaude_class,💬 AI服务
   - RULE-SET,gemini_class,💬 AI服务
+  - RULE-SET,github_class,🚀 GitHub
   - RULE-SET,onedrive_class,💾 OneDrive
   - RULE-SET,speedtest_class,🗺 Speedtest
   - RULE-SET,discord_class,📲 Discord
@@ -189,8 +191,9 @@ rules:
   - RULE-SET,protonmail_class,📫 邮件服务
   - RULE-SET,telegram_class,📲 Telegram
   - RULE-SET,liaotianapp_class,📲 聊天软件
-  - RULE-SET,steamcn_class,🎮 游戏下载
+  - RULE-SET,game_download_cdn_class,🎮 游戏下载
   - RULE-SET,steam_cdn_class,🎮 游戏下载
+  - RULE-SET,steamcn_class,🎮 游戏下载
   - RULE-SET,steam_class,🎮 游戏平台
   - RULE-SET,epic_class,🎮 游戏平台
   - RULE-SET,ea_class,🎮 游戏平台
@@ -252,6 +255,7 @@ rule-providers:
   copilot_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.list"}
   ciaude_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.list"}
   gemini_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.list"}
+  github_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.list"}
   onedrive_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OneDrive/OneDrive.list"}
   speedtest_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Speedtest/Speedtest.list"}
   discord_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Discord/Discord.list"}
@@ -260,8 +264,9 @@ rule-providers:
   protonmail_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Protonmail/Protonmail.list"}
   telegram_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list"}
   liaotianapp_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/liaotianapp.list"}
-  steamcn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.list"}
+  game_download_cdn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Game_Download_CDN.list"}
   steam_cdn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Steam_CDN.list"}
+  steamcn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.list"}
   steam_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.list"}
   epic_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Epic/Epic.list"}
   ea_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/EA/EA.list"}
