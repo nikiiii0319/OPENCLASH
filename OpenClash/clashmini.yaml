@@ -134,7 +134,6 @@ proxy-groups:
   - {name: 🗺 Speedtest, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 💬 AI服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🚀 GitHub, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 📲 Telegram, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 聊天软件, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 Instagram, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 Discord, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
@@ -161,6 +160,7 @@ proxy-groups:
   - {name: 🌎 国内流媒体, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 💾 OneDrive, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 💾 iCloud, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
+  - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 🍙 小米服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
@@ -184,16 +184,16 @@ rules:
   - RULE-SET,privatetracker_class,🎯 全球直连
   - GEOSITE,openai,💬 AI服务
   - GEOSITE,bing,💬 AI服务
-  - RULE-SET,gemini_class,💬 AI服务
+  - GEOSITE,category-ai-!cn,💬 AI服务
   - GEOSITE,github,🚀 GitHub
-  - RULE-SET,onedrive_class,💾 OneDrive
+  - GEOSITE,onedrive,💾 OneDrive
   - GEOSITE,category-speedtest,🗺 Speedtest
-  - RULE-SET,discord_class,📲 Discord
-  - RULE-SET,instagram_class,📲 Instagram
+  - GEOSITE,discord,📲 Discord
+  - GEOSITE,instagram,📲 Instagram
   - RULE-SET,mail_class,📫 邮件服务
-  - RULE-SET,protonmail_class,📫 邮件服务
-  - GEOSITE,telegram,📲 Telegram,no-resolve
-  - RULE-SET,liaotianapp_class,📲 聊天软件
+  - GEOSITE,protonmail,📫 邮件服务
+  - GEOSITE,category-communication,📲 聊天软件
+  - GEOSITE,category-social-media-!cn,📲 聊天软件
   - RULE-SET,game_download_cdn_class,🎮 游戏下载
   - RULE-SET,steam_cdn_class,🎮 游戏下载
   - RULE-SET,steamcn_class,🎮 游戏下载
@@ -204,29 +204,30 @@ rules:
   - GEOSITE,bahamut,📺 Bahamut
   - RULE-SET,jp_class,🎥 日本媒体
   - GEOSITE,youtube,📹 YouTube
-  - RULE-SET,tidal_class,🎻 TIDAL
+  - GEOSITE,tidal,🎻 TIDAL
   - GEOSITE,disney,🎥 DisneyPlus
   - GEOSITE,hbo,🎥 HBO
   - RULE-SET,emby_3_class,🎥 EMBY
   - RULE-SET,emby_2_class,🎥 EMBY
   - RULE-SET,emby_class,🎥 EMBY
-  - RULE-SET,dazn_class,🎥 Dazn
+  - GEOSITE,dazn,🎥 Dazn
   - GEOSITE,apple-tvplus,🎥 AppleTV+
   - RULE-SET,bilibili_class,🎥 B站国内
   - RULE-SET,bilibiliintl_class,🎥 B站国际
-  - RULE-SET,aiqicha_class,🎥 爱奇艺
+  - GEOSITE,iqiyi,🎥 爱奇艺
   - GEOSITE,spotify,🎻 Spotify
   - RULE-SET,qobuz_class,🎻 Qobuz
   - RULE-SET,applemusic_class,🎻 Applemusic
   - GEOSITE,tiktok,🎥 TikToK
-  - GEOIP,netflix,🎥 Netflix,no-resolve
-  - RULE-SET,icloud_class,💾 iCloud
+  - GEOSITE,netflix,🎥 Netflix
+  - GEOSITE,icloud,💾 iCloud
+  - GEOSITE,googlefcm,📢 谷歌FCM
+  - GEOSITE,google,🔎 Google
   - GEOSITE,microsoft,Ⓜ️ 微软服务
   - GEOSITE,apple,🍎 苹果服务
   - RULE-SET,xiaomi_class,🍙 小米服务
   - GEOSITE,category-entertainment,🌎 国外流媒体
-  - GEOIP,google,🔎 Google,no-resolve
-  - RULE-SET,yahoo_class,🔎 Yahoo
+  - GEOSITE,yahoo,🔎 Yahoo
   - RULE-SET,global_class,🌎 国外网站
   - RULE-SET,chinamedia_class,🌎 国内流媒体
   - RULE-SET,china_class,🌎 国内网站
@@ -236,6 +237,11 @@ rules:
   - RULE-SET,chinaip_class,🎯 全球直连
   - RULE-SET,download_class,🎯 全球直连
   - GEOSITE,category-public-tracker,🎯 全球直连
+  - GEOIP,telegram,📲 聊天软件,no-resolve
+  - GEOIP,twitter,📲 聊天软件,no-resolve
+  - GEOIP,facebook,📲 聊天软件,no-resolve
+  - GEOIP,google,🔎 Google,no-resolve
+  - GEOIP,netflix,🎥 Netflix,no-resolve
   - GEOSITE,cn,🎯 全球直连
   - GEOIP,cn,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
@@ -246,31 +252,20 @@ rule-providers:
   direct_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.list"}
   custom_direct_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Custom_Direct.list"}
   privatetracker_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PrivateTracker/PrivateTracker.list"}
-  gemini_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.list"}
-  onedrive_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OneDrive/OneDrive.list"}
-  discord_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Discord/Discord.list"}
-  instagram_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Instagram/Instagram.list"}
   mail_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Mail/Mail.list"}
-  protonmail_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Protonmail/Protonmail.list"}
-  liaotianapp_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/liaotianapp.list"}
   game_download_cdn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Game_Download_CDN.list"}
   steam_cdn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Steam_CDN.list"}
   steamcn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.list"}
   kr_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/KR.list"}
   jp_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/JP.list"}
-  tidal_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TIDAL/TIDAL.list"}
   emby_3_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/ddgksf2013/Filter/refs/heads/master/Emby.list"}
   emby_2_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Emby_2.list"}
   emby_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Emby/Emby.list"}
-  dazn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/DAZN/DAZN.list"}
   bilibili_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BiliBili/BiliBili.list"}
   bilibiliintl_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BiliBiliIntl/BiliBiliIntl.list"}
-  aiqicha_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AiQiCha/AiQiCha.list"}
   qobuz_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Qobuz/Qobuz.list"}
   applemusic_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AppleMusic/AppleMusic.list"}
-  icloud_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/iCloud/iCloud.list"}
   xiaomi_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/XiaoMi/XiaoMi.list"}
-  yahoo_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Yahoo.list"}
   global_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"}
   chinamedia_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.list"}
   chinamax_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax.list"}
