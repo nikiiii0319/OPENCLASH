@@ -128,7 +128,7 @@ dns:
  
 # 策略组
 proxy-groups:
-  - {name:♻️ 手动切换, type: select, proxies: [🎯 全球直连], include-all: true}
+  - {name: ♻️ 手动切换, type: select, proxies: [🎯 全球直连], include-all: true}
   - {name: 🔎 Google, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🔎 Yahoo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🗺 Speedtest, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
