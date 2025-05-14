@@ -247,9 +247,8 @@ rules:
   - GEOSITE,microsoft,Ⓜ️ 微软服务
   - GEOSITE,apple,🍎 苹果服务
   - RULE-SET,xiaomi_class,🍙 小米服务
-  - GEOSITE,category-entertainment,🌎 国外流媒体
   - GEOSITE,yahoo,🔎 Yahoo
-  - RULE-SET,global_class,🌎 国外网站
+  - GEOSITE,category-entertainment,🌎 国外流媒体
   - RULE-SET,chinamedia_class,🌎 国内流媒体
   - RULE-SET,china_class,🌎 国内网站
   - RULE-SET,chinamax_class,🎯 全球直连
@@ -263,6 +262,7 @@ rules:
   - GEOIP,facebook,📲 聊天软件,no-resolve
   - GEOIP,google,🔎 Google,no-resolve
   - GEOIP,netflix,🎥 Netflix,no-resolve
+  - RULE-SET,global_class,🌎 国外网站
   - GEOSITE,cn,🎯 全球直连
   - GEOIP,cn,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
