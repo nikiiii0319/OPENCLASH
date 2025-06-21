@@ -215,7 +215,6 @@ rules:
   - GEOSITE,protonmail,📫 邮件服务
   - GEOSITE,category-communication,📲 聊天软件
   - GEOSITE,category-social-media-!cn,📲 聊天软件
-  - RULE-SET,game_download_cdn_class,🎮 游戏下载
   - RULE-SET,steam_cdn_class,🎮 游戏下载
   - RULE-SET,steamcn_class,🎮 游戏下载
   - GEOSITE,steam,🎮 游戏平台
@@ -271,11 +270,10 @@ rule-anchor:
 rule-providers:
   lan_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.list"}
   direct_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.list"}
-  custom_direct_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Custom_Direct.list"}
+  custom_direct_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Custom_Direct.list"}
   privatetracker_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PrivateTracker/PrivateTracker.list"}
   mail_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Mail/Mail.list"}
-  game_download_cdn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Game_Download_CDN.list"}
-  steam_cdn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Steam_CDN.list"}
+  steam_cdn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Steam_CDN.list"}
   steamcn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.list"}
   kr_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/KR.list"}
   jp_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/JP.list"}
