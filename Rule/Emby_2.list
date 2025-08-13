@@ -134,3 +134,5 @@ DOMAIN-SUFFIX,emby.cjpc.cc
 DOMAIN-SUFFIX,cristiamo.xyz
 IP-CIDR,161.97.148.156/24,no-resolve
 DOMAIN-SUFFIX,emby.cristiamo.top
+IP-CIDR,103.197.185.84/24,no-resolve
+IP-CIDR,103.141.183.18/24,no-resolve
