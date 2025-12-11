@@ -19,12 +19,14 @@ proxy-providers:
       timeout: 5000
       interval: 300
     proxy: 🎯 全球直连
-    url: "订阅链接2"
+    url: "订阅链接2" 
     override:
       skip-cert-verify: true
       udp: true
+     
 # 用于下载订阅时指定UA
 global-ua: clash.meta
+    
 # 全局配置
 port: 7890
 socks-port: 7891
@@ -35,6 +37,7 @@ ipv6: false
 allow-lan: true
 unified-delay: false
 tcp-concurrent: true
+  
 geodata-mode: false
 geodata-loader: standard
 geo-auto-update: true
@@ -44,20 +47,24 @@ geox-url:
   geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
   mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
   asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+  
 # 控制面板
 external-controller: 0.0.0.0:9090
 secret: ""
 external-ui: ui
 external-ui-url: "https://ghp.ci/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+
 # 匹配进程 always/strict/off
 find-process-mode: strict
 global-client-fingerprint: chrome
 keep-alive-idle: 600
 keep-alive-interval: 30
+
 # 策略组选择和fakeip缓存
 profile:
   store-selected: true
   store-fake-ip: true
+  
 # 流量嗅探
 sniffer:
   enable: true
@@ -70,25 +77,33 @@ sniffer:
     QUIC:
       ports: [443, 8443]
   force-domain:
-    - +.v2ex.com
+    - "+.v2ex.com"
+    - "+.netflix.com"
+    - "+.nflxvideo.net"
+    - "+.amazonaws.com"
+    - "+.media.dssott.com"
   skip-domain:
     - "Mijia Cloud"
     - "dlg.io.mi.com"
     - "+.push.apple.com"
     - "+.apple.com"
+    - "+.oray.com"
+    - "+.sunlogin.net"
+    
 # 代理模式
 tun:
   enable: true
   stack: system
   device: utun
   dns-hijack:
-    - tcp://any:53
+  - tcp://any:53
   gso: true
   gso-max-size: 65536
   auto-route: false
   auto-detect-interface: false
   auto-redirect: false
   strict-route: false
+  
 # DNS模块
 dns:
   enable: true
@@ -96,27 +111,27 @@ dns:
   ipv6: false
   respect-rules: true
   # 模式切换 redir-host / fake-ip
-
   enhanced-mode: fake-ip
   fake-ip-range: 28.0.0.1/8
   # 模式切换 whitelist/blacklist 
-
   # 黑名单模式表示如果匹配成功则不返回 Fake-IP, 白名单模式时只有匹配成功才返回 Fake-IP
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - +.lan
-    - +.local
+    - "+.lan"
+    - "+.local"
     - geosite:private
     - geosite:cn
   default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - 114.114.114.114
+    - tls://223.5.5.5:853
   proxy-server-nameserver:
     - 223.5.5.5
     - 119.29.29.29
   nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+ 
 # 策略组
 proxy-groups:
   - {name: ♻️ 手动切换, type: select, proxies: [🎯 全球直连], include-all: true}
@@ -132,8 +147,6 @@ proxy-groups:
   - {name: 🎥 Netflix, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🎥 DisneyPlus, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 📺 Bahamut, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
-  - {name: 🎥 日本媒体, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
-  - {name: 🎥 韩国媒体, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🎥 AppleTV+, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🎥 HBO, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🎥 PrimeVideo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
@@ -141,14 +154,10 @@ proxy-groups:
   - {name: 🎥 Dazn, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🎥 TikToK, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🎻 Spotify, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
-  - {name: 🎻 Applemusic, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🎻 TIDAL, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
-  - {name: 🎻 Qobuz, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🎥 爱奇艺, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
-  - {name: 🎥 B站国内, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
-  - {name: 🎥 B站国际, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🌎 国外流媒体, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
-  - {name: 🌎 国内流媒体, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🛒 国外电商, type: select, proxies:  [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 💾 OneDrive, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 💾 iCloud, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
@@ -156,10 +165,7 @@ proxy-groups:
   - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🍙 小米服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🎮 游戏平台, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
-  - {name: 🎮 游戏下载, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 📫 邮件服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
-  - {name: 🌎 国外网站, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
-  - {name: 🌎 国内网站, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT], include-all: null}
   - {name: 🐟 漏网之鱼, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - filter: 港|🇭🇰|HK|(?i)Hong
@@ -193,16 +199,18 @@ proxy-groups:
     filter: 美国|🇺🇲|US|(?i)States|America
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
 rules:
-  - RULE-SET,lan_class,🎯 全球直连
   - GEOSITE,private,🎯 全球直连
   - GEOIP,private,🎯 全球直连,no-resolve
-  - RULE-SET,direct_class,🎯 全球直连
   - RULE-SET,custom_direct_class,🎯 全球直连
+  - RULE-SET,custom_direct_domain,🎯 全球直连
+  - RULE-SET,custom_direct_classical_ip,🎯 全球直连
+  - RULE-SET,custom_proxy_domain,♻️ 手动切换
+  - RULE-SET,custom_proxy_ip,♻️ 手动切换
   - GEOSITE,google-cn,🎯 全球直连
   - GEOSITE,category-games@cn,🎯 全球直连
+  - RULE-SET,steam_cdn_classical,🎯 全球直连
   - GEOSITE,category-game-platforms-download,🎯 全球直连
   - GEOSITE,category-public-tracker,🎯 全球直连
-  - RULE-SET,privatetracker_class,🎯 全球直连
   - GEOSITE,openai,💬 AI服务
   - GEOSITE,bing,💬 AI服务
   - GEOSITE,category-ai-!cn,💬 AI服务
@@ -211,33 +219,23 @@ rules:
   - GEOSITE,category-speedtest,🗺 Speedtest
   - GEOSITE,discord,📲 Discord
   - GEOSITE,instagram,📲 Instagram
-  - RULE-SET,mail_class,📫 邮件服务
   - GEOSITE,protonmail,📫 邮件服务
   - GEOSITE,category-communication,📲 聊天软件
   - GEOSITE,category-social-media-!cn,📲 聊天软件
-  - RULE-SET,steam_cdn_class,🎮 游戏下载
-  - RULE-SET,steamcn_class,🎮 游戏下载
   - GEOSITE,steam,🎮 游戏平台
   - GEOSITE,category-games,🎮 游戏平台
-  - RULE-SET,kr_class,🎥 韩国媒体
   - GEOSITE,primevideo,🎥 PrimeVideo
   - GEOSITE,bahamut,📺 Bahamut
-  - RULE-SET,jp_class,🎥 日本媒体
   - GEOSITE,youtube,📹 YouTube
   - GEOSITE,tidal,🎻 TIDAL
   - GEOSITE,disney,🎥 DisneyPlus
   - GEOSITE,hbo,🎥 HBO
-  - RULE-SET,emby_3_class,🎥 EMBY
-  - RULE-SET,emby_2_class,🎥 EMBY
+  - GEOSITE,category-emby,🎥 EMBY
   - RULE-SET,emby_class,🎥 EMBY
   - GEOSITE,dazn,🎥 Dazn
   - GEOSITE,apple-tvplus,🎥 AppleTV+
-  - RULE-SET,bilibili_class,🎥 B站国内
-  - RULE-SET,bilibiliintl_class,🎥 B站国际
   - GEOSITE,iqiyi,🎥 爱奇艺
   - GEOSITE,spotify,🎻 Spotify
-  - RULE-SET,qobuz_class,🎻 Qobuz
-  - RULE-SET,applemusic_class,🎻 Applemusic
   - GEOSITE,tiktok,🎥 TikToK
   - GEOSITE,netflix,🎥 Netflix
   - GEOSITE,icloud,💾 iCloud
@@ -248,49 +246,27 @@ rules:
   - RULE-SET,xiaomi_class,🍙 小米服务
   - GEOSITE,yahoo,🔎 Yahoo
   - GEOSITE,category-entertainment,🌎 国外流媒体
-  - RULE-SET,chinamedia_class,🌎 国内流媒体
-  - RULE-SET,china_class,🌎 国内网站
-  - RULE-SET,chinamax_class,🎯 全球直连
-  - RULE-SET,chinadomain_class,🎯 全球直连
-  - RULE-SET,chinacompanyip_class,🎯 全球直连
-  - RULE-SET,chinaip_class,🎯 全球直连
-  - RULE-SET,download_class,🎯 全球直连
-  - GEOSITE,category-public-tracker,🎯 全球直连
+  - GEOSITE,category-ecommerce,🛒 国外电商
+  - GEOSITE,gfw,♻️ 手动切换
   - GEOIP,telegram,📲 聊天软件,no-resolve
   - GEOIP,twitter,📲 聊天软件,no-resolve
   - GEOIP,facebook,📲 聊天软件,no-resolve
   - GEOIP,google,🔎 Google,no-resolve
   - GEOIP,netflix,🎥 Netflix,no-resolve
-  - RULE-SET,global_class,🌎 国外网站
   - GEOSITE,cn,🎯 全球直连
   - GEOIP,cn,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
 rule-anchor:
-  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+  class: &class {type: http, interval: 720, behavior: classical, format: text}
+  domain: &domain {type: http, interval: 720, behavior: domain, format: yaml}
+  ip: &ip {type: http, interval: 720, behavior: ipcidr, format: yaml}
+  classical: &classical {type: http, interval: 720, behavior: classical, format: yaml}
 rule-providers:
-  lan_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.list"}
-  direct_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.list"}
   custom_direct_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Custom_Direct.list"}
-  privatetracker_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PrivateTracker/PrivateTracker.list"}
-  mail_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Mail/Mail.list"}
-  steam_cdn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Steam_CDN.list"}
-  steamcn_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.list"}
-  kr_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/KR.list"}
-  jp_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/JP.list"}
-  emby_3_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/ddgksf2013/Filter/refs/heads/master/Emby.list"}
-  emby_2_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Emby_2.list"}
-  emby_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Emby/Emby.list"}
-  bilibili_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BiliBili/BiliBili.list"}
-  bilibiliintl_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BiliBiliIntl/BiliBiliIntl.list"}
-  qobuz_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Qobuz/Qobuz.list"}
-  applemusic_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AppleMusic/AppleMusic.list"}
+  custom_direct_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Domain.yaml"}
+  custom_proxy_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Proxy_Domain.yaml"}
+  custom_proxy_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Proxy_IP.yaml"}
+  custom_direct_classical_ip: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Classical_IP.yaml"}
+  steam_cdn_classical: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Steam_CDN_Classical.yaml"}
+  emby_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Emby.list"}
   xiaomi_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/XiaoMi/XiaoMi.list"}
-  global_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"}
-  chinamedia_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.list"}
-  chinamax_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax.list"}
-  china_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/China/China.list"}
-  chinadomain_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"}
-  chinacompanyip_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"}
-  chinaip_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"}
-  download_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.list"}
- 
