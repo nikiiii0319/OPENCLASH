@@ -175,7 +175,7 @@ rules:
   - RULE-SET,custom_direct_domain,🎯 全球直连
   - RULE-SET,custom_direct_classical_ip,🎯 全球直连
   - RULE-SET,custom_proxy_domain,♻️ 手动切换
-  - RULE-SET,custom_proxy_ip,♻️ 手动切换
+  - RULE-SET,custom_proxy_classical_ip,♻️ 手动切换
   - GEOSITE,google-cn,🎯 全球直连
   - GEOSITE,category-games@cn,🎯 全球直连
   - RULE-SET,steam_cdn_classical,🎯 全球直连
@@ -235,7 +235,7 @@ rule-providers:
   custom_direct_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Custom_Direct.list"}
   custom_direct_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Domain.yaml"}
   custom_proxy_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Proxy_Domain.yaml"}
-  custom_proxy_ip: {!!merge <<: *ip, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Proxy_IP.yaml"}
+  custom_proxy_classical_ip: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Proxy_Classical_IP.yaml"}
   custom_direct_classical_ip: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Classical_IP.yaml"}
   steam_cdn_classical: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Steam_CDN_Classical.yaml"}
   emby_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Emby.list"}
