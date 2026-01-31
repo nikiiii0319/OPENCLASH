@@ -133,32 +133,32 @@ dns:
 # 策略组
 proxy-groups:
   - {name: ♻️ 手动切换, type: select, proxies: [🎯 全球直连], include-all: true}
-  - {name: 🔎 Google, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🗺 Speedtest, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
-  - {name: 💬 AI服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🚀 GitHub, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 📲 聊天软件, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 📲 Discord, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 📹 YouTube, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎥 Netflix, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎥 DisneyPlus, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 📺 Bahamut, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎥 AppleTV+, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎥 HBO, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎥 PrimeVideo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎥 EMBY, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
-  - {name: 🎥 TikToK, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎻 Spotify, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🌎 国外流媒体, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🛒 国外电商, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
-  - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
-  - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎮 游戏平台, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 📫 邮件服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎯 全球直连, type: select, proxies: [DIRECT], include-all: false}
+  - {name: 🔎 Google, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🗺 Speedtest, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 💬 AI服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🚀 GitHub, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 📲 聊天软件, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 📲 Discord, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 📹 YouTube, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🎥 Netflix, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🎥 DisneyPlus, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 📺 Bahamut, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🎥 AppleTV+, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🎥 HBO, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🎥 PrimeVideo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🎥 EMBY, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🎥 TikToK, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🎻 Spotify, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🌎 国外流媒体, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🛒 国外电商, type: select, proxies:  [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🎮 游戏平台, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 📫 邮件服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
+  - {name: 🎯 全球直连, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - {name: 🔀 非标端口, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🇭🇰 HK香港, 🇼🇸 TW台湾, 🇸🇬 SG新加坡, 🇯🇵 JP日本, 🇰🇷 KR韩国, 🇺🇸 US美国], include-all: null}
   - filter: 港|🇭🇰|HK|(?i)Hong
     name: 🇭🇰 HK香港
     type: select
