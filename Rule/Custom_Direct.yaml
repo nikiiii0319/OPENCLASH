@@ -1,6 +1,7 @@
 # NAME: Custom_Direct
 # 强制直连域名列表，来自个人收集
 
+payload:
 # koyso 游戏下载
 DOMAIN-KEYWORD,koyso
 # 加油站小程序
