@@ -121,12 +121,10 @@ dns:
     - "+.local"
     - geosite:private
     - geosite:cn
+    - localhost.ptlogin2.qq.com
   default-nameserver:
     - 114.114.114.114
     - tls://223.5.5.5:853
-  proxy-server-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
@@ -136,12 +134,10 @@ dns:
 proxy-groups:
   - {name: ♻️ 手动切换, type: select, proxies: [🎯 全球直连], include-all: true}
   - {name: 🔎 Google, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🔎 Yahoo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🗺 Speedtest, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 💬 AI服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🚀 GitHub, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 聊天软件, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 📲 Instagram, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📲 Discord, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📹 YouTube, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎥 Netflix, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
@@ -151,70 +147,57 @@ proxy-groups:
   - {name: 🎥 HBO, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎥 PrimeVideo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎥 EMBY, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
-  - {name: 🎥 Dazn, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎥 TikToK, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎻 Spotify, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎻 TIDAL, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 🎥 爱奇艺, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 🌎 国外流媒体, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🛒 国外电商, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 💾 OneDrive, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
-  - {name: 💾 iCloud, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
-  - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
-  - {name: 🍙 小米服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
+  - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎮 游戏平台, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 📫 邮件服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT], include-all: false}
+  - {name: 🔀 非标端口, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 🐟 漏网之鱼, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
 rules:
   - GEOSITE,private,🎯 全球直连
   - GEOIP,private,🎯 全球直连,no-resolve
-  - RULE-SET,custom_direct_class,🎯 全球直连
-  - RULE-SET,custom_direct_domain,🎯 全球直连
-  - RULE-SET,custom_direct_classical_ip,🎯 全球直连
-  - RULE-SET,custom_proxy_domain,♻️ 手动切换
-  - RULE-SET,custom_proxy_classical_ip,♻️ 手动切换
+  - RULE-SET,Custom_Direct,🎯 全球直连
+  - RULE-SET,Custom_Direct_Domain,🎯 全球直连
+  - RULE-SET,Custom_Direct IP,🎯 全球直连
+  - RULE-SET,Custom_Proxy_Domain,♻️ 手动切换
+  - RULE-SET,Custom_Proxy_IP,♻️ 手动切换
   - GEOSITE,google-cn,🎯 全球直连
   - GEOSITE,category-games@cn,🎯 全球直连
-  - RULE-SET,steam_cdn_classical,🎯 全球直连
+  - RULE-SET,Steam_CDN,🎯 全球直连
   - GEOSITE,category-game-platforms-download,🎯 全球直连
   - GEOSITE,category-public-tracker,🎯 全球直连
+  - GEOSITE,category-communication,📲 聊天软件
+  - GEOSITE,category-social-media-!cn,📲 聊天软件
   - GEOSITE,openai,💬 AI服务
   - GEOSITE,bing,💬 AI服务
   - GEOSITE,category-ai-!cn,💬 AI服务
   - GEOSITE,github,🚀 GitHub
-  - GEOSITE,onedrive,💾 OneDrive
   - GEOSITE,category-speedtest,🗺 Speedtest
-  - GEOSITE,discord,📲 Discord
-  - GEOSITE,instagram,📲 Instagram
-  - GEOSITE,protonmail,📫 邮件服务
-  - GEOSITE,category-communication,📲 聊天软件
-  - GEOSITE,category-social-media-!cn,📲 聊天软件
   - GEOSITE,steam,🎮 游戏平台
-  - GEOSITE,category-games,🎮 游戏平台
-  - GEOSITE,primevideo,🎥 PrimeVideo
-  - GEOSITE,bahamut,📺 Bahamut
   - GEOSITE,youtube,📹 YouTube
-  - GEOSITE,tidal,🎻 TIDAL
-  - GEOSITE,disney,🎥 DisneyPlus
-  - GEOSITE,hbo,🎥 HBO
-  - GEOSITE,category-emby,🎥 EMBY
-  - RULE-SET,emby_class,🎥 EMBY
-  - GEOSITE,dazn,🎥 Dazn
   - GEOSITE,apple-tvplus,🎥 AppleTV+
-  - GEOSITE,iqiyi,🎥 爱奇艺
-  - GEOSITE,spotify,🎻 Spotify
-  - GEOSITE,tiktok,🎥 TikToK
-  - GEOSITE,netflix,🎥 Netflix
-  - GEOSITE,icloud,💾 iCloud
+  - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,microsoft,Ⓜ️ 微软服务
   - GEOSITE,googlefcm,📢 谷歌FCM
   - GEOSITE,google,🔎 Google
-  - GEOSITE,microsoft,Ⓜ️ 微软服务
-  - GEOSITE,apple,🍎 苹果服务
-  - RULE-SET,xiaomi_class,🍙 小米服务
-  - GEOSITE,yahoo,🔎 Yahoo
+  - GEOSITE,category-emby,🎥 EMBY
+  - RULE-SET,Emby,🎥 EMBY
+  - GEOSITE,tiktok,🎥 TikToK
+  - GEOSITE,netflix,🎥 Netflix
+  - GEOSITE,discord,📲 Discord
+  - GEOSITE,disney,🎥 DisneyPlus
+  - GEOSITE,hbo,🎥 HBO
+  - GEOSITE,primevideo,🎥 PrimeVideo
+  - GEOSITE,spotify,🎻 Spotify
+  - GEOSITE,bahamut,📺 Bahamut
+  - GEOSITE,protonmail,📫 邮件服务
+  - GEOSITE,category-games,🎮 游戏平台
   - GEOSITE,category-entertainment,🌎 国外流媒体
   - GEOSITE,category-ecommerce,🛒 国外电商
   - GEOSITE,gfw,♻️ 手动切换
@@ -225,18 +208,18 @@ rules:
   - GEOIP,netflix,🎥 Netflix,no-resolve
   - GEOSITE,cn,🎯 全球直连
   - GEOIP,cn,🎯 全球直连,no-resolve
+  - RULE-SET,Custom_Port_Direct,🔀 非标端口
   - MATCH,🐟 漏网之鱼
 rule-anchor:
-  class: &class {type: http, interval: 720, behavior: classical, format: text}
   domain: &domain {type: http, interval: 720, behavior: domain, format: yaml}
   ip: &ip {type: http, interval: 720, behavior: ipcidr, format: yaml}
   classical: &classical {type: http, interval: 720, behavior: classical, format: yaml}
 rule-providers:
-  custom_direct_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Custom_Direct.list"}
-  custom_direct_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Domain.yaml"}
-  custom_proxy_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Proxy_Domain.yaml"}
-  custom_proxy_classical_ip: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Proxy_Classical_IP.yaml"}
-  custom_direct_classical_ip: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Classical_IP.yaml"}
-  steam_cdn_classical: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Steam_CDN_Classical.yaml"}
-  emby_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Emby.list"}
-  xiaomi_class: {!!merge <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/XiaoMi/XiaoMi.list"}
+  Custom_Direct: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Custom_Direct.yaml"}
+  Custom_Port_Direct: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Port_Direct.yaml"}
+  Custom_Direct_Domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Domain.yaml"}
+  Custom_Direct IP: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Classical_IP.yaml"}
+  Custom_Proxy_Domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Proxy_Domain.yaml"}
+  Custom_Proxy_IP: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Proxy_Classical_IP.yaml"}
+  Steam_CDN: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Steam_CDN_Classical.yaml"}
+  Emby: {!!merge <<: *classical, url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Emby.yaml"}
