@@ -9,7 +9,7 @@ proxy-providers:
       timeout: 5000
       interval: 300
     proxy: 🎯 全球直连
-    url: "https://dler.cloud/api/v3/download.getFile/d20c8d50-9074-424a-9bfd-1963867ecaac?mu=smart&lv=2%7C5%7C6&type=all.json"
+    url: "订阅链接1"
   Airport_02:
     type: http
     interval: 1800
@@ -19,7 +19,7 @@ proxy-providers:
       timeout: 5000
       interval: 300
     proxy: 🎯 全球直连
-    url: "https://sub01.sh-cloudflare.sbs:8443/api/v1/client/subscribe?token=95a00ccd1ad8d1213212cb17cff781f0" 
+    url: "订阅链接2" 
     override:
       skip-cert-verify: true
       udp: true
