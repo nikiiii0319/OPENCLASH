@@ -1,9 +1,0 @@
-# NAME: Custom_Direct
-# 强制直连域名列表，来自个人收集
-
-# koyso 游戏下载
-DOMAIN-KEYWORD,koyso
-# 加油站小程序
-DOMAIN-KEYWORD,hangnakeji
-# rustdesk 远程
-DOMAIN-KEYWORD,rustdesk
