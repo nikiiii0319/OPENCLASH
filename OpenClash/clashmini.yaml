@@ -155,7 +155,6 @@ proxy-groups:
   - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎮 游戏平台, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
-  - {name: 📫 邮件服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT], include-all: false}
   - {name: 🔀 非标端口, type: select, proxies: [🎯 全球直连, ♻️ 手动切换], include-all: true}
   - {name: 🐟 漏网之鱼, type: select, proxies: [♻️ 手动切换, 🎯 全球直连], include-all: true}
@@ -196,7 +195,6 @@ rules:
   - GEOSITE,primevideo,🎥 PrimeVideo
   - GEOSITE,spotify,🎻 Spotify
   - GEOSITE,bahamut,📺 Bahamut
-  - GEOSITE,protonmail,📫 邮件服务
   - GEOSITE,category-games,🎮 游戏平台
   - GEOSITE,category-entertainment,🌎 国外流媒体
   - GEOSITE,category-ecommerce,🛒 国外电商
