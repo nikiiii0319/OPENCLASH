@@ -4,3 +4,5 @@
 payload:
   # koyso 游戏下载
   - DOMAIN-KEYWORD,koyso
+  # RustDesk
+  - DOMAIN-KEYWORD,rustdesk
