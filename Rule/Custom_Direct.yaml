@@ -4,3 +4,4 @@
 payload:
   # koyso 游戏下载
   - DOMAIN-KEYWORD,koyso
+  - DOMAIN-KEYWORD,playzip
