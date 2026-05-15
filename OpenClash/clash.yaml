@@ -39,6 +39,8 @@ proxy-providers:
     override:  # 覆写节点配置
       skip-cert-verify: true  # 跳过证书验证
       udp: true  # 启用UDP
+      # additional-prefix: "[provider1]"  # 为节点名添加前缀
+      # additional-suffix: "test"  # 为节点名添加后缀
   provider2:
     type: http  # 类型：http（从URL获取）或 file（本地文件）
     url: "订阅链接2"
@@ -51,6 +53,8 @@ proxy-providers:
     override:  # 覆写节点配置
       skip-cert-verify: true  # 跳过证书验证
       udp: true  # 启用UDP
+      # additional-prefix: "[provider2]"  # 为节点名添加前缀
+      # additional-suffix: "test"  # 为节点名添加后缀
 
 # ==================== 地理数据库配置 GeoData Configuration ====================
 # 用于 IP 和域名的地理位置及分类判断
