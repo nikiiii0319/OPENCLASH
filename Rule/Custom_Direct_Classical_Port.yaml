@@ -1,0 +1,6 @@
+# 41641端口流量强制直连
+# TOTAL: 2
+
+payload:
+  - SRC-PORT,41641
+  - DST-PORT,41641
