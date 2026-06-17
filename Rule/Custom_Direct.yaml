@@ -6,3 +6,5 @@ payload:
   - DOMAIN-KEYWORD,koyso
   - DOMAIN-KEYWORD,playzip
   - DOMAIN-KEYWORD,trashbytes
+  # UGREENlink 远程访问
+  - DOMAIN-KEYWORD,ug.link
