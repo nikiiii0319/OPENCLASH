@@ -8,3 +8,5 @@ payload:
   - DOMAIN-KEYWORD,trashbytes
   # UGREENlink 远程访问
   - DOMAIN-KEYWORD,ug.link
+  - DOMAIN-KEYWORD,ugnas
+  - DOMAIN-KEYWORD,ugreengroup
