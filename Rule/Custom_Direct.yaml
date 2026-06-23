@@ -6,3 +6,5 @@ payload:
   - DOMAIN-KEYWORD,koyso
   - DOMAIN-KEYWORD,playzip
   - DOMAIN-KEYWORD,trashbytes
+  # Oracle 甲骨文云
+  - DOMAIN-KEYWORD,oracle
