@@ -173,6 +173,7 @@ dns:
     - geosite:private  # 匹配规则库所有私有内网/保留域名，绕过 Fake-IP
     - geosite:cn  # 匹配规则库所有中国大陆域名，绕过 Fake-IP
     - localhost.ptlogin2.qq.com  # QQ 登录专用域名，单独放行防止 Fake-IP 导致登录失败
+    - rule-set:OC-CN-Domain  # 匹配规则库绕过中国大陆域名，绕过 Fake-IP
   # Fake-IP 过滤模式：blacklist（黑名单）/ whitelist（白名单）
   fake-ip-filter-mode: blacklist
   # 是否遵循规则（false 表示所有 DNS 查询都通过直连查询，不经过代理规则）
@@ -253,6 +254,7 @@ proxy-groups:
 rules:
   - GEOSITE,private,🎯 全球直连
   - GEOIP,private,🎯 全球直连,no-resolve
+  - RULE-SET,OC-CN-Domain,🎯 全球直连
   - RULE-SET,Custom_Direct,🎯 全球直连
   - RULE-SET,Custom_Direct_Domain,🎯 全球直连
   - RULE-SET,Custom_Direct_IP,🎯 全球直连,no-resolve
@@ -317,61 +319,68 @@ rule-providers:
     behavior: classical  # 混合类型（包含多种规则）
     interval: 1800  # 半小时
     type: http
-    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Port_Direct.yaml"
+    url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Custom_Port_Direct.yaml"
     format: yaml  # 文本
 
   Custom_Direct_Domain:
     behavior: domain  # 仅域名
     interval: 1800  # 半小时
     type: http
-    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Domain.mrs"
+    url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Custom_Direct_Domain.mrs"
     format: mrs  # 二进制格式
 
   Custom_Direct_IP:
     behavior: ipcidr  # 仅 IP
     interval: 1800  # 半小时
     type: http
-    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_IP.mrs"
+    url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Custom_Direct_IP.mrs"
     format: mrs  # 二进制格式
 
   Custom_Direct_Port:
     behavior: classical  # 混合类型（包含多种规则）
     interval: 1800  # 半小时
     type: http
-    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Direct_Classical_Port.yaml"
+    url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Custom_Direct_Classical_Port.yaml"
     format: yaml  # 文本
 
   Custom_Proxy_Domain:
     behavior: domain  # 仅域名
     interval: 1800  # 半小时
     type: http
-    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_Domain.mrs"
+    url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Custom_Proxy_Domain.mrs"
     format: mrs  # 二进制格式
 
   Custom_Proxy_IP:
     behavior: ipcidr  # 仅 IP
     interval: 1800  # 半小时
     type: http
-    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Proxy_IP.mrs"
+    url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Custom_Proxy_IP.mrs"
     format: mrs  # 二进制格式
 
   Steam_CDN_Domain:
     behavior: domain  # Steam CDN下载服务器（直连获得更快速度）
     interval: 1800  # 半小时
     type: http
-    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_Domain.mrs"
+    url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Steam_CDN_Domain.mrs"
     format: mrs  # 二进制格式
 
   Steam_CDN_IP:
     behavior: ipcidr  # Steam CDN下载服务器（直连获得更快速度）
     interval: 1800  # 半小时
     type: http
-    url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Steam_CDN_IP.mrs"
+    url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Steam_CDN_IP.mrs"
     format: mrs  # 二进制格式
 
   Emby:
-    behavior: classical  # 混合类型（包含多种规则
+    behavior: classical  # 混合类型（包含多种规则）
     interval: 1800  # 半小时
     type: http
     url: "https://raw.githubusercontent.com/nikiiii0319/OPENCLASH/refs/heads/main/Rule/Emby.yaml"
     format: yaml  # 文本
+
+  OC-CN-Domain:
+    behavior: domain  # 绕过中国大陆域名
+    interval: 43200  # 十二小时
+    type: http
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"   
+    format: mrs  # 二进制格式
