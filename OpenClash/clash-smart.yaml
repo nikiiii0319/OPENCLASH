@@ -55,6 +55,21 @@ proxy-providers:
       udp: true  # 启用UDP
       # additional-prefix: "[provider2]"  # 为节点名添加前缀
       # additional-suffix: "test"  # 为节点名添加后缀
+  provider3:
+    type: http  # 类型：http（从URL获取）或 file（本地文件）
+    url: "订阅链接3"
+    interval: 1800  # 订阅更新间隔（秒），1800=30分钟
+    proxy: DIRECT  # 下载订阅时使用的代理策略
+    health-check:  # 节点健康检查
+      enable: true
+      interval: 600  # 检查间隔（秒）
+      url: https://cp.cloudflare.com/generate_204
+    override:  # 覆写节点配置
+      # skip-cert-verify: true  # 跳过证书验证
+      udp: true  # 启用UDP
+      # additional-prefix: "[落地]"  # 为节点名添加前缀
+      # additional-suffix: "test"  # 为节点名添加后缀
+      dialer-proxy: 🔗 链式代理
 
 # ==================== 地理数据库配置 GeoData Configuration ====================
 # 用于 IP 和域名的地理位置及分类判断
@@ -189,31 +204,33 @@ dns:
 # ==================== 代理策略组 Proxy Groups ====================
 # 策略组：定义不同用途的代理策略，可在规则中引用
 proxy-groups:
-  - {name: ♻️ 手动切换, type: select, proxies: [🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🔎 Google, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🗺 Speedtest, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 💬 AI服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🚀 GitHub, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 📲 聊天软件, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 📹 YouTube, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🎥 Netflix, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🎥 DisneyPlus, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 📺 Bahamut, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🎥 AppleTV+, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🎥 HBO, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🎥 PrimeVideo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🎥 EMBY, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🎥 TikToK, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🎻 Spotify, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🌎 国外流媒体, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🛒 国外电商, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🎮 游戏平台, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: ♻️ 手动切换, type: select, proxies: [🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🔗 链式代理, type: select, proxies: [🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🌐 落地出口, type: select, proxies: [🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🔎 Google, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🗺 Speedtest, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 💬 AI服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🚀 GitHub, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 📲 聊天软件, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 📹 YouTube, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🎥 Netflix, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🎥 DisneyPlus, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 📺 Bahamut, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🎥 AppleTV+, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🎥 HBO, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🎥 PrimeVideo, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🎥 EMBY, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🎥 TikToK, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🎻 Spotify, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🌎 国外流媒体, type: select, proxies: [♻️ 手动切换, 🎯 全球直连,🌐 落地出口, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🛒 国外电商, type: select, proxies: [♻️ 手动切换, 🎯 全球直连,🌐 落地出口, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, ♻️ 手动切换,🌐 落地出口, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🎮 游戏平台, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT], include-all: false}
-  - {name: 🔀 非标端口, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🔀 非标端口, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
   - {name: 🔯 香港智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: '(?i)(🇭🇰|港|\bHK(?:[-_ ]?\d+(?:[-_ ]?[A-Za-z]{2,})?)?\b|hk|Hong Kong|HongKong|hongkong|HONG KONG|HONGKONG|深港|HKG|九龙|Kowloon|新界|沙田|荃湾|葵涌)'}
   - {name: 🔯 日本智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: '(?i)(🇯🇵|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|(?<!尼|-)日|\bJP(?:[-_ ]?\d+(?:[-_ ]?[A-Za-z]{2,})?)?\b|Japan|JAPAN|JPN|NRT|HND|KIX|TYO|OSA|关西|Kansai|KANSAI)'}
   - {name: 🔯 狮城智能, type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, filter: '(?i)(🇸🇬|新加坡|坡|狮城|\bSG(?:[-_ ]?\d+(?:[-_ ]?[A-Za-z]{2,})?)?\b|Singapore|SINGAPORE|SIN)'}
