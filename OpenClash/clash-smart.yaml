@@ -205,8 +205,8 @@ dns:
 # 策略组：定义不同用途的代理策略，可在规则中引用
 proxy-groups:
   - {name: ♻️ 手动切换, type: select, proxies: [🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🔗 链式代理, type: select, proxies: [🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
-  - {name: 🌐 落地出口, type: select, proxies: [🎯 全球直连, 🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
+  - {name: 🔗 链式代理, type: select, proxies: [🎯 全球直连], include-all: true}
+  - {name: 🌐 落地出口, type: select, proxies: [🎯 全球直连], include-all: true}
   - {name: 🔎 Google, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
   - {name: 🗺 Speedtest, type: select, proxies: [🎯 全球直连, ♻️ 手动切换, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
   - {name: 💬 AI服务, type: select, proxies: [♻️ 手动切换, 🎯 全球直连, 🌐 落地出口,🔯 香港智能, 🔯 日本智能, 🔯 狮城智能, 🔯 美国智能], include-all: true}
